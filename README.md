@@ -12,7 +12,8 @@
 
 * Test
   * s-Test-1 ...
-  * s-Test-2
+  * s-Test-2 ...
+  * s-Test-3 ...
 
 ## In a new version 1
 
