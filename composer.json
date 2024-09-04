@@ -1,0 +1,47 @@
+{
+    "name": "vdhsoft/testpkg",
+    "description": "A test Laravel package",
+    "type": "library",
+    "license": "MIT",
+    "version": "1.0.0", 
+    "keywords": [
+        "laravel",
+        "test",
+        "package"
+    ],
+    "authors": [
+        {
+            "name": "VDHSoft",
+            "email": "info@vdhsoft.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.1"
+    },
+    "require-dev": {
+        "php": "^8.1"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "VDHSoft\\TestPkg\\TestPkgServiceProvider"
+            ],
+            "aliases": {
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "VDHSoft\\TestPkg\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "VDHSoft\\TestPkg\\Test\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    }
+}
