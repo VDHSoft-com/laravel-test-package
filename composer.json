@@ -1,5 +1,5 @@
 {
-    "name": "vdhsoft/testpkg",
+    "name": "vdhsoft-com/laravel-test-package",
     "description": "A test Laravel package",
     "type": "library",
     "license": "MIT",
