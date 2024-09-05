@@ -3,7 +3,7 @@
     "description": "A test Laravel package",
     "type": "library",
     "license": "MIT",
-    "version": "1.0.1", 
+    "version": "1.0.0", 
     "keywords": [
         "laravel",
         "test",
