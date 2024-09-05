@@ -47,6 +47,7 @@ use VDHSoft\TestPkg\Example;
 
 $example = new Example();
 echo $example->greet('World');  // Affichera "Hello, World!"
+
 3. Accéder aux fonctionnalités via Facades (si applicable)
 Si votre package utilise des facades pour offrir une interface simplifiée, assurez-vous que celles-ci sont correctement configurées dans le service provider du package. Par exemple :
 
@@ -88,6 +89,7 @@ Puis, vous pouvez accéder à la classe Example via la facade dans vos contrôle
 use Example;
 
 $result = Example::greet('World');  // Appelle la méthode greet via la facade
+
 4. Tester les routes ou commandes personnalisées
 Si votre package enregistre des routes ou des commandes Artisan, vous pouvez y accéder comme vous le feriez pour celles de Laravel. Par exemple, si vous avez défini des routes dans votre service provider :
 

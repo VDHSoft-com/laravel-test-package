@@ -9,8 +9,8 @@ class TestPkgServiceProvider extends ServiceProvider
 {
     public function register() // register the services
     {
-        $this->app->singleton('example', function($app) {
-            return new \VDHSoft\TestPkg\Example();
+        $this->app->singleton('testpkg', function($app) {
+            return new Example();
         });
     }
 

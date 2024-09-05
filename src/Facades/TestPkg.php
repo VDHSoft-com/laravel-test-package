@@ -1,6 +1,6 @@
 <?php 
 
-namespace JVDHSoft\TestPkg\Facades;
+namespace VDHSoft\TestPkg\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
@@ -19,6 +19,7 @@ class TestPkg extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'laravel-test-package';
+        //return 'laravel-test-package';
+        return 'testpkg'; // Le nom du binding dans le container
     }
 }

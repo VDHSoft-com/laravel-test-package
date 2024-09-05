@@ -57,6 +57,23 @@ And in the Facades
         'TestPkg' => VDHSoft\TestPkg\Facades\TestPkg::class,
     ])->toArray(),
 
+in the composer.json du package :
+Ajoutez l'alias pour la facade (si nécessaire) :
+
+
+"extra": {
+    "laravel": {
+        "providers": [
+            "VDHSoft\\TestPkg\\TestPkgServiceProvider"
+        ],
+        "aliases": {
+            "Example": "VDHSoft\\TestPkg\\Facades\\Example"
+        }
+    }
+}
+
+
+
 At the end Add in routes.php
 
 	Route::group(['prefix' => 'filemanager','middleware' => 'auth'], function() {    

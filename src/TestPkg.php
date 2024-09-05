@@ -54,6 +54,7 @@ use VDHSoft\TestPkg\Example;
 
 $example = new Example();
 echo $example->greet('World');  // Affichera "Hello, World!"
+
 3. Accéder aux fonctionnalités via Facades (si applicable)
 Si votre package utilise des facades pour offrir une interface simplifiée, assurez-vous que celles-ci sont correctement configurées dans le service provider du package. Par exemple :
 
@@ -89,6 +90,7 @@ Ajoutez l'alias pour la facade (si nécessaire) :
         }
     }
 }
+
 Puis, vous pouvez accéder à la classe Example via la facade dans vos contrôleurs ou vues Laravel :
 
 
