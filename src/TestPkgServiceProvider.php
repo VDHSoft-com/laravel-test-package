@@ -9,6 +9,7 @@ class TestPkgServiceProvider extends ServiceProvider
 {
     public function register() // register the services
     {
+		// Enregistre une instance de 'Example' sous le nom 'testpkg' dans le container
         $this->app->singleton('testpkg', function($app) {
             return new Example();
         });

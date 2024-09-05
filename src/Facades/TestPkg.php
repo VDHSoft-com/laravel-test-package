@@ -20,6 +20,6 @@ class TestPkg extends Facade
     protected static function getFacadeAccessor()
     {
         //return 'laravel-test-package';
-        return 'testpkg'; // Le nom du binding dans le container
+        return 'testpkg'; // Cela doit correspondre à l'alias enregistré dans le service provider
     }
 }
