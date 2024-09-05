@@ -23,6 +23,13 @@ class TestPkgServiceProvider extends ServiceProvider
     public function boot() // tasks after registration
     {
 		// Boot methods like routes or views can be placed here
-		$dbg = "Hello world!";
+        // Charger les vues du package
+        $this->loadViewsFrom(__DIR__.'/resources/views', 'testpackage');
+
+        // Si vous voulez permettre la publication des vues dans le projet principal
+        $this->publishes([
+            __DIR__.'/resources/views' => resource_path('views/vendor/testpackage'),
+        ], 'views');
+
     }
 }
