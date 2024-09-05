@@ -50,9 +50,12 @@ Add to your file app.php
 	])->toArray(),
 
 
-And in the Facade
+And in the Facades
 
-	'TestPkg'=> 'VDHSoft\TestPkg\Facades\TestPkg',
+    'aliases' => Facade::defaultAliases()->merge([
+        // 'Example' => App\Facades\Example::class,
+        'TestPkg' => VDHSoft\TestPkg\Facades\TestPkg::class,
+    ])->toArray(),
 
 At the end Add in routes.php
 

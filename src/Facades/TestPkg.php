@@ -19,6 +19,6 @@ class TestPkg extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'something';
+        return 'laravel-test-package';
     }
 }

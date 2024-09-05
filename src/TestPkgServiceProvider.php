@@ -9,7 +9,9 @@ class TestPkgServiceProvider extends ServiceProvider
 {
     public function register() // register the services
     {
-
+        $this->app->singleton('example', function($app) {
+            return new \VDHSoft\TestPkg\Example();
+        });
     }
 
     /**
@@ -19,6 +21,7 @@ class TestPkgServiceProvider extends ServiceProvider
     */
     public function boot() // tasks after registration
     {
+		// Boot methods like routes or views can be placed here
 		$dbg = "Hello world!";
     }
 }
