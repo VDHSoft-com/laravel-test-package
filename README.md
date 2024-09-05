@@ -28,7 +28,7 @@ Edit your `composer.json`.
 
 Add app\Http\Controllers\TestPkgController.php to your project (only if you want a test)
 
-Execute
+Execute :
 
 	composer update
 	or
@@ -45,6 +45,7 @@ Execute
 
 	
 	if you want to personalize the view; you need to publish them in resources/views/vendor/testpkg with :
+	
 	php artisan vendor:publish --provider="VDHSoft\TestPkg\TestPkgServiceProvider" --tag=views
 	
 
