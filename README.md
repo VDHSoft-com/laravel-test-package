@@ -52,7 +52,7 @@ Add to your file app.php
 
 And in the Facade
 
-	'xxx'=> 'VDHSoft\TestPkg\Facades\TestPkg',
+	'TestPkg'=> 'VDHSoft\TestPkg\Facades\TestPkg',
 
 At the end Add in routes.php
 
