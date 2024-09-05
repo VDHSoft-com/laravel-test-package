@@ -33,6 +33,20 @@ Execute
 	composer update
 	or
 	composer require vdhsoft-com/laravel-test-package:dev-main
+	
+	optional : 
+	
+	php artisan config:clear
+	php artisan view:clear
+	php artisan route:clear
+	php artisan cache:clear
+	php artisan optimize:clear
+	composer dump-autoload
+
+	
+	if you want to personalize the view; you need to publish them in resources/views/vendor/testpkg with :
+	php artisan vendor:publish --provider="VDHSoft\TestPkg\TestPkgServiceProvider" --tag=views
+	
 
 Add to your file app.php
 
