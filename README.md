@@ -13,7 +13,7 @@ This package will only be supported for security reasons..
 
 ## Instalation
 
-Edit your `composer.json`.
+Edit your `composer.json` :
 
 	"require": {
 		"vdhsoft-com/laravel-test-package": "dev-main"
