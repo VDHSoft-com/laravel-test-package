@@ -27,6 +27,7 @@ Edit your `composer.json`.
         }
     ]
 
+Add app\Http\Controllers\TestPkgController.php to your project (only if you want a test)
 
 Execute
 
@@ -58,7 +59,7 @@ And in the Facades
     ])->toArray(),
 
 in the composer.json du package :
-Ajoutez l'alias pour la facade (si nécessaire) :
+Add the alias for the facade (NOT NECESSARY !!) :
 
 
 "extra": {
@@ -72,61 +73,79 @@ Ajoutez l'alias pour la facade (si nécessaire) :
     }
 }
 
+Calling Example WITH the Facade :
+
+	<?php
+
+	namespace App\Http\Controllers;
+
+	use Illuminate\Http\Request;
+
+	class TestPkgController extends Controller
+	{
+		public function showTest()
+		{
+			$userName = 'www.vdhsoft.com';
+
+			$result = \Example::greet($userName, "1");  // Appel la méthode greet via la facade
+			echo($result);
+			echo('<br>End.');
+		}
+	}
+
+Calling Example WITHOUT the Facade #1 :
+
+	<?php
+
+	namespace App\Http\Controllers;
+
+	use Illuminate\Http\Request;
+
+	class TestPkgController extends Controller
+	{
+		public function showTest()
+		{
+			$userName = 'www.vdhsoft.com';
+
+			$example = new \VDHSoft\TestPkg\Example(); // Appel la méthode directement sans facade
+			$result = $example->greet($userName, "2");
+			echo($result);
+			echo('<br>End.');
+		}
+	}
+
+Calling Example WITHOUT the Facade #2 :
+
+	<?php
+
+	namespace App\Http\Controllers;
+
+	use Illuminate\Http\Request;
+
+	use VDHSoft\TestPkg\Example;
+
+	class TestPkgController extends Controller
+	{
+		public function showTest()
+		{
+			$userName = 'www.vdhsoft.com';
+
+			$example = new Example(); // Appel la méthode directement sans facade
+			$result = $example->greet($userName, "2");
+			echo($result);
+			echo('<br>End.');
+		}
+	}
+
 
 
 At the end Add in routes.php
-
-	Route::group(['prefix' => 'filemanager','middleware' => 'auth'], function() {    
-	    Route::get('show', 'FilemanagerLaravelController@getShow');
-	    Route::get('connectors', 'FilemanagerLaravelController@getConnectors');
-	    Route::post('connectors', 'FilemanagerLaravelController@postConnectors');
-	});
-
-
-## If you want to put in a sub folder
-Ejemplo http://localhost/admin/filemanager/
-
-Modify your routes.php
 ```
-Route::group(array('middleware' => 'auth'), function(){    
-    Route::get('admin/filemanager/show', 'FilemanagerLaravelController@getShow');
-    Route::get('admin/filemanager/connectors', 'FilemanagerLaravelController@getConnectors');
-    Route::post('admin/filemanager/connectors', 'FilemanagerLaravelController@postConnectors');
-});
-```
-Modify your controller
-```
-// app/Http/Controllers/FilemanagerLaravelController.php
-public function getConnectors()
-	{
-		$extraConfig = array('dir_filemanager'=>'/admin');
-		$f = FilemanagerLaravel::Filemanager($extraConfig);
-		$f->connector_url = url('/').'/admin/filemanager/connectors';
-		$f->run();
-	}
-	public function postConnectors()
-	{
-		$extraConfig = array('dir_filemanager'=>'/admin');
-		$f = FilemanagerLaravel::Filemanager($extraConfig);
-		$f->connector_url = url('/').'/admin/filemanager/connectors';
-		$f->run();
-	}
+Route::get('/testpkg', [TestPkgController::class, 'showTest']);
 ```
 
-Modify all links by adding the name of your folder
-```	
-// resources/views/vendor/filemanager-laravel/filemanager/index.blade.php
-<link rel="stylesheet" type="text/css" href="{{ url('') }}/admin/filemanager/styles/filemanager.css" />
-```
+## If you want to run the test (after TestPkgController.php has been copied)
+Execute : http://localhost/laravel/package/project/public/testpkg
 
-Change the absolute url:
-```
-<script type="text/javascript">
-editor_config.selector = "textarea";
-editor_config.path_absolute = "http://laravel-filemanager.rhcloud.com/admin/";
-tinymce.init(editor_config);
-</script>
-```
-
-## Demo
-http://www.youtube.com/watch?v=yowJRKZ3Ums
+## Demo (coming soon on my channel)
+https://www.youtube.com/@Domizza
