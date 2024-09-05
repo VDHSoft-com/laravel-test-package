@@ -30,7 +30,7 @@ Add app\Http\Controllers\TestPkgController.php to your project (only if you want
 
 Execute :
 
-	composer update
+	composer update (if you have edited your composer.json)
 	or
 	composer require vdhsoft-com/laravel-test-package:dev-main
 	
