@@ -44,7 +44,7 @@ Execute :
 	composer dump-autoload
 
 	
-	if you want to personalize the view; 
+	if you want to personalize the view, 
 	you need to publish them in resources/views/vendor/testpkg with :
 	
 	php artisan vendor:publish --provider="VDHSoft\TestPkg\TestPkgServiceProvider" --tag=views
