@@ -1,7 +1,7 @@
 # Test package for Laravel 10
 
 This is a simple test package/skeleton for Laravel 10+; I use it as the base of my 'vendor' modules; just change the name 'TestPkg' into everything you want.
-All comments are welcome !
+<br>All comments are welcome !
 
 ## Important
 This package will only be supported for security reasons..
