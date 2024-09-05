@@ -10,8 +10,6 @@ class TestPkgController extends Controller
 {
     public function showTest()
     {
-        // Logique pour préparer les données ou manipuler le contenu
-    	$isActive = true;
     	$userName = 'www.vdhsoft.com';
 
 		// Sans '\' : PHP pense que tu utilises une classe locale (dans le même namespace ou importée), et donc l'appel échoue si ce n'est pas ce que tu veux.
@@ -27,5 +25,11 @@ class TestPkgController extends Controller
 
         return ("End.");
     }
+    
+    public function showTestView()
+    {
+    	return view('testpkg::example');
+    }
 }
+
 

@@ -1,6 +1,7 @@
 # Test package for Laravel 10
 
 This is a simple test package/skeleton for Laravel 10+; I use it as the base of my 'vendor' modules; just change the name 'TestPkg' into everything you want.
+<br>it shows how create class/members and views in a package.
 <br><br>All comments are welcome !
 
 ## Important
@@ -90,6 +91,11 @@ Calling Example WITH the Facade (TestPkgController.php) :
 			echo($result);
 			echo('<br>End.');
 		}
+
+		public function showTestView()
+		{
+			return view('testpkg::example');
+		}
 	}
 
 Calling Example WITHOUT the Facade #1 (TestPkgController.php) :
@@ -110,6 +116,11 @@ Calling Example WITHOUT the Facade #1 (TestPkgController.php) :
 			$result = $example->greet($userName, "2");
 			echo($result);
 			echo('<br>End.');
+		}
+
+		public function showTestView()
+		{
+			return view('testpkg::example');
 		}
 	}
 
@@ -134,17 +145,24 @@ Calling Example WITHOUT the Facade #2 (TestPkgController.php) :
 			echo($result);
 			echo('<br>End.');
 		}
+
+		public function showTestView()
+		{
+			return view('testpkg::example');
+		}
 	}
 
 
 
 At the end Add in routes.php
 ```
-Route::get('/testpkg', [TestPkgController::class, 'showTest']);
+Route::get('/testpkg', [TestPkgController::class, 'showTest']); // call the class/members from the package
+Route::get('/testpkgview', [TestPkgController::class, 'showTestView']); // call a view from the package
 ```
 
 ## If you want to run the test (after TestPkgController.php has been copied)
-Execute : http://localhost/laravel/package/project/public/testpkg
+Execute (class) : http://localhost/laravel/package/project/public/testpkg
+Execute (view) : http://localhost/laravel/package/project/public/testpkgview
 
 ## Demo (coming soon on my channel)
 https://www.youtube.com/@Domizza
