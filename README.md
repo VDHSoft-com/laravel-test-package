@@ -47,7 +47,7 @@ Add to your file app.php
 	 * Application Service Providers...
 	 */
 	...
-])->toArray(),
+	])->toArray(),
 
 
 And in the Facade
