@@ -73,6 +73,7 @@ Add the alias for the facade (NOT NECESSARY !!) :
     }
 }
 
+## Examples
 Calling Example WITH the Facade :
 
 	<?php
