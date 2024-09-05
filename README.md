@@ -73,8 +73,8 @@ Add the alias for the facade (NOT NECESSARY !!) :
     }
 }
 
-## Examples
-Calling Example WITH the Facade :
+## Examples (see app\Http\Controller\TestPkgController.php)
+Calling Example WITH the Facade (TestPkgController.php) :
 
 	<?php
 
@@ -94,7 +94,7 @@ Calling Example WITH the Facade :
 		}
 	}
 
-Calling Example WITHOUT the Facade #1 :
+Calling Example WITHOUT the Facade #1 (TestPkgController.php) :
 
 	<?php
 
@@ -115,7 +115,7 @@ Calling Example WITHOUT the Facade #1 :
 		}
 	}
 
-Calling Example WITHOUT the Facade #2 :
+Calling Example WITHOUT the Facade #2 (TestPkgController.php) :
 
 	<?php
 
