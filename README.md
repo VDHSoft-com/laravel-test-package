@@ -176,7 +176,7 @@ Route::get('/testpkg', [TestPkgController::class, 'showTest']); // call the clas
 Route::get('/testpkgview', [TestPkgController::class, 'showTestView']); // call a view from the package
 ```
 
-## If you want to run the test (after TestPkgController.php has been copied)
+## If you want to run the tests (after TestPkgController.php has been copied)
 Execute (class) : http://localhost/laravel/package/project/public/testpkg
 Execute (view) : http://localhost/laravel/package/project/public/testpkgview
 
