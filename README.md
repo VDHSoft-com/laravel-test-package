@@ -5,9 +5,6 @@ This is a simple test package/skeleton for Laravel
 ## Important
 This package will only be supported for security reasons..
 
-## Demo
-<a href="http://laravel-filemanager.rhcloud.com/" target="_blank" >http://...com/</a><br>
-
 ## Requires
 
 "nothing": "*"
