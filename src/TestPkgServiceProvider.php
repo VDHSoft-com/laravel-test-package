@@ -7,7 +7,7 @@ use Illuminate\Support\ServiceProvider;
 
 class TestPkgServiceProvider extends ServiceProvider
 {
-    public function register()
+    public function register() // register the services
     {
 
     }
@@ -17,7 +17,7 @@ class TestPkgServiceProvider extends ServiceProvider
     *
     * @return void
     */
-    public function boot()
+    public function boot() // tasks after registration
     {
 		$dbg = "Hello world!";
     }
