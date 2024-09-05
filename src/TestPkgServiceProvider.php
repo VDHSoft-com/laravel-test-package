@@ -12,6 +12,8 @@ class TestPkgServiceProvider extends ServiceProvider
     *
     * @return void
     */
+	// Utilisé pour réaliser des tâches de configuration qui nécessitent que tous les services soient enregistrés, 
+	// comme le chargement de vues, la publication de ressources, la définition de routes, etc.
     public function boot() // tasks after registration
     {
 		// Boot methods like routes or views can be placed here
@@ -23,13 +25,26 @@ class TestPkgServiceProvider extends ServiceProvider
             __DIR__.'/resources/views' => resource_path('views/vendor/testpkg'),
         ], 'views');
 
+		// Définir des événements ou des observateurs :
+		//Event::listen('event.name', function ($param) {
+		// Code à exécuter
+		//});
+		
+		//Définir des routes ou des configurations spécifiques :
+		//Route::middleware('web')
+		//	->namespace($this->namespace)
+		//	->group(base_path('routes/web.php'));
     }
 
+	// Utilisé pour enregistrer des services, bindings, configurations dans le conteneur de services.
     public function register() // register the services
     {
-		// Enregistre une instance de 'Example' sous le nom 'testpkg' dans le container
+		// Enregistrement de classes ou services dans le conteneur,
+		// enregistre une instance de 'Example' sous le nom 'testpkg' dans le container
         $this->app->singleton('testpkg', function($app) {
             return new Example();
         });
+		// Binding d'une interface à une implémentation :
+		// $this->app->bind(ExampleInterface::class, ExampleImplementation::class);
     }
 }
