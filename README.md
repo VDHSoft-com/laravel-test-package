@@ -36,7 +36,19 @@ Execute
 
 Add to your file app.php
 
+	'providers' => ServiceProvider::defaultProviders()->merge([
+	/*
+	 * Package Service Providers...
+	 */
+
 	VDHSoft\TestPkg\TestPkgServiceProvider::class,
+	
+	/*
+	 * Application Service Providers...
+	 */
+	...
+])->toArray(),
+
 
 And in the Facade
 
